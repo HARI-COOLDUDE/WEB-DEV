@@ -3,6 +3,7 @@ import './asset/css/App.css';
 import Homepage from './components/Homepage';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
+import Predict from './components/Predict'
 import ProtectedRoute from './routes/Protected';
 import UnProtectedRoute from './routes/Unprotected';
 function App() {
@@ -12,13 +13,14 @@ function App() {
         <Route element={<UnProtectedRoute />} >
           <Route path="/" element={<Homepage />} />
           <Route path="/register" element={<Register />} />
+          <Route path = "/predict" element={<Predict/>}/>
         </Route>
+        
         <Route element={<ProtectedRoute />} >
+        
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
-
-
-      </Routes>
+        </Routes>
     </div>
   );
 }
